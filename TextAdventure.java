@@ -18,105 +18,94 @@ public class TextAdventure
   public void play()
   {
     String input;
+    int inputInt;
     // start of adventure. You can change this if you like
     console.setImage("distantcity.jpg");
 
     // ask the user for their name.
     System.out.println("What is your name?\n");
     input = inScanner.nextLine();
-
-    // Change ourHero's name
-    // ADD CODE HERE
-    
+    ourHero.changeName(input);
     // describe the starting situation. Feel free to change this
     System.out.println("You wake up to find yourself on the edge of a shadowy forest with the sun nearly set. \nYou see what looks like a city in the distance. \nWhat would you like to do? \ncity: go towards the city\nforest: turn around and re-enter the forest\nnap: go back to sleep\n" + ourHero.getName() + ": ");
 
     // get user input and go to the appropriate zone based on their input
     // ADD CODE HERE
+    inputInt= inScanner.nextInt();
+    switch(inputInt){
+      case 1:
+        enterZone1();
+        break;
+      case 2:
+        enterZone2();
+        break;
+      case 3:
+        enterZone3();
+        break;
+      case 4:
+        enterZone4();
+        break;
+      case 5:
+        enterZone5();
+        break;
+      case 6:
+      enterZone6();
+        break;
+    }
 
   }
 
   private void enterZone1()
   {
-    // change image
-    // ADD CODE HERE
+    console.setImage("distantcity.jpg");
 
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
+    System.out.println("Description");
+    int inputInt = inScanner.nextInt();
 
   }
 
   private void enterZone2()
   {
-    // change image
-    // ADD CODE HERE
+    console.setImage("distantcity.jpg");
 
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
+    System.out.println("Description");
+    int inputInt = inScanner.nextInt();
     
   }
 
   private void enterZone3()
   {
-    // change image
-    // ADD CODE HERE
+    console.setImage("distantcity.jpg");
 
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
+    System.out.println("Description");
+    int inputInt = inScanner.nextInt();
     
   }
 
   private void enterZone4()
   {
-    // change image
-    // ADD CODE HERE
+    console.setImage("distantcity.jpg");
 
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
+    System.out.println("Description");
+    int inputInt = inScanner.nextInt();
     
   }
 
   private void enterZone5()
   {
-    // change image
-    // ADD CODE HERE
+    console.setImage("distantcity.jpg");
 
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
+    System.out.println("Description");
+    int inputInt = inScanner.nextInt();
     
   }
 
   private void enterZone6()
   {
-    // change image
-    // ADD CODE HERE
+    console.setImage("distantcity.jpg");
 
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
+    System.out.println("Description");
+    int inputInt = inScanner.nextInt();
     
   }
 
