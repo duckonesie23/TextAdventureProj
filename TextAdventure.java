@@ -225,10 +225,10 @@ public class TextAdventure
     else if(ourHero.getOption(4)==2&&ourHero.getOption(3)==1){
       System.out.println("Even though you slacked off a bit, you had a long day.\nSleep overtakes you and you are prepared for the next day.");
     }
-    else if(ourHero.getOption(2)==1){
-      System.out.println("Although you didn\'talk much, you had a long and fufilling day.\nYou get into bed excited for the next day");
-    }else{
+    else if(ourHero.getOption(2) != 1){
       System.out.println("As you lay in bed you think about the day you had.\nHopefully tomorrow will be as good.");
+    }else{
+      System.out.println("Although you didn\'talk much, you had a long and fufilling day.\nYou get into bed excited for the next day");
     }
 
     inScanner.close();
