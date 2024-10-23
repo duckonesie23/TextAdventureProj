@@ -62,6 +62,7 @@ public class TextAdventure
     System.out.println("\nYour alarm goes off. The bed you lay in is the perfect temperature, and the light outside is dark. Do you…"+
       "\n1 - Get out of bed\n2 - Try to sleep for five more minutes\n");
     int inputInt = inScanner.nextInt();
+    ourHero.setOption(1, inputInt);
     switch(inputInt){
       case 1:
         System.out.println("You wake up on schedule, giving yourself ample time to fix your hair and wash your face.\n"+
@@ -92,22 +93,18 @@ public class TextAdventure
     System.out.println("\nThe bus hums and sways as it takes its route. Solid rays of light sneak their way into the bus. Do you…."+
       "\n1 - Socialize\n2 - Study for your test\n3 - Space out\n");
     int inputInt = inScanner.nextInt();
-    
-    switch(inputInt){
-      case 1:
-        System.out.println("You decide to wait a bit until your friend arrives.\nAs the bus comes closer to her stop, you scooch over and make some room.\nShe sits down next to you and talk about your weekends while listening to whatever silly song she comes up with.");
+    ourHero.setOption(2, inputInt);
+    if(inputInt==1){
+      System.out.println("You decide to wait a bit until your friend arrives.\nAs the bus comes closer to her stop, you scooch over and make some room.\nShe sits down next to you and talk about your weekends while listening to whatever silly song she comes up with.");
         enterZone3();
-        break;
-      case 2:
-        System.out.println("You decide to study for your upcoming tests.\nNow you won\'t be cooked for your math test!");
+    }else if(inputInt==2){
+      System.out.println("You decide to study for your upcoming tests.\nNow you won\'t be cooked for your math test!");
         enterZone3();
-        break;
-      case 3:
-        System.out.println("You decide you need a little more of a brain break before school starts.\nYou pop in your earbuds and max out the volume.\nWhile lip syncing to the lyrics you look around hoping nobody\'s watching the faces you make. ");
+    }else{
+      System.out.println("You decide you need a little more of a brain break before school starts.\nYou pop in your earbuds and max out the volume.\nWhile lip syncing to the lyrics you look around hoping nobody\'s watching the faces you make. ");
         enterZone3();
-        break;
     }
-  }
+    }
 
   private void enterZone3()
   {
@@ -116,6 +113,7 @@ public class TextAdventure
     System.out.println("\nThe hallways are cramped and stuffy and lockers take up a chunk of the hallway but nobody even uses them. Do you…"+
       "\n1 - Loiter around\n2 - Speedwalk to class\n3 - Trip your friend\n");
     int inputInt = inScanner.nextInt();
+    ourHero.setOption(3, inputInt);
     switch (inputInt) {
       case 1:
         System.out.println("You meet up with a friend in the hallway.\n" + //
@@ -154,9 +152,20 @@ public class TextAdventure
   {
     console.setImage("classroom.jpg");
 
-    System.out.println("\nYou make it to class ");
+    System.out.println("\nYou make it to class. Do you... \n"+
+    "1 - Pay attention\n2 - Sleep\n");
     int inputInt = inScanner.nextInt();
-    
+    ourHero.setOption(4, inputInt);
+    switch (inputInt) {
+      case 1:
+        System.out.println("You stay awake and pay attention to the entire lecture.\nGood job! Now you won't have to do as much studying.");
+        enterZone5();
+        break;
+      case 2:
+        System.out.println("You doze off during class...\nMiraculously, you're not caught by the teacher.\nBut now you don't have a clue on how to do the homework.");
+        enterZone6();
+        break;
+    }
   }
 
   private void enterZone5()
@@ -164,8 +173,9 @@ public class TextAdventure
     console.setImage("afterschool.jpg");
 
     System.out.println("\nSchool\'s finally done! But there\'s no rush to go home, enjoy yourself a bit and maybe get some food? Do you…"+
-      "\n1 - Go to the Cafeteria\n2 -  Go to the Plaza\n3 - Go to Robotics\n");
+      "\n1 - Go to the Cafeteria\n2 -  Go to the Plaza\n");
     int inputInt = inScanner.nextInt();
+    ourHero.setOption(5, inputInt);
     switch(inputInt){
       case 1:
         System.out.println("You decide to hang out at the cafeteria.\n" + //
@@ -187,8 +197,9 @@ public class TextAdventure
     console.setImage("home.jpg");
 
     System.out.println("Now you’re home after a long day… what now?"+
-      "\n1 - Play your instrument\n2 - Play some games\n3 - Get picked up by your friends\n");
+      "\n1 - Play your instrument\n2 - Play some games\n");
     int inputInt = inScanner.nextInt();
+    ourHero.setOption(6, inputInt);
     switch(inputInt){
       case 1:
         System.out.println("You decide to pick up your instrument, a bright blue bass guitar.\n" + //
@@ -208,7 +219,12 @@ public class TextAdventure
 
   private void gameEnd()
   {
-    // ADD CODE HERE
+    if(ourHero.getOption(4)==2&&ourHero.getOption(3)==1){
+      System.out.println("Even though you slacked off a bit, you had a long day.\nSleep overtakes you and you are prepared for the next day.");
+    }
+    else if(ourHero.getOption(2)==1){
+      System.out.println("Although you didn\'talk much, you had a long and fufilling day.\nYou get into bed excited for the next day");
+    }
 
     inScanner.close();
   }
