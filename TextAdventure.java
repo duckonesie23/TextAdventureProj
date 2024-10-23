@@ -27,30 +27,13 @@ public class TextAdventure
     input = inScanner.nextLine();
     ourHero.changeName(input);
     // describe the starting situation. Feel free to change this
-    System.out.println("");
+    System.out.println("You are about to play a day in my life...\nDon't worry about being perfect just do what you would do.\n1 - continue\n");
 
     // get user input and go to the appropriate zone based on their input
     // ADD CODE HERE
     inputInt= inScanner.nextInt();
-    switch(inputInt){
-      case 1:
-        enterZone1();
-        break;
-      case 2:
-        enterZone2();
-        break;
-      case 3:
-        enterZone3();
-        break;
-      case 4:
-        enterZone4();
-        break;
-      case 5:
-        enterZone5();
-        break;
-      case 6:
-      enterZone6();
-        break;
+    if(inputInt == 1){
+      enterZone1();
     }
 
   }
