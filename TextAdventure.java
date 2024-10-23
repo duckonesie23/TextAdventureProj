@@ -196,7 +196,7 @@ public class TextAdventure
   {
     console.setImage("home.jpg");
 
-    System.out.println("Now you’re home after a long day… what now?"+
+    System.out.println("\nNow you\'re home after a long day… what now?"+
       "\n1 - Play your instrument\n2 - Play some games\n");
     int inputInt = inScanner.nextInt();
     ourHero.setOption(6, inputInt);
@@ -219,11 +219,16 @@ public class TextAdventure
 
   private void gameEnd()
   {
-    if(ourHero.getOption(4)==2&&ourHero.getOption(3)==1){
+    if(ourHero.getHealth() <= 0){
+      System.out.println("You pass out...\n Don't overwork yourself.");
+    }
+    else if(ourHero.getOption(4)==2&&ourHero.getOption(3)==1){
       System.out.println("Even though you slacked off a bit, you had a long day.\nSleep overtakes you and you are prepared for the next day.");
     }
     else if(ourHero.getOption(2)==1){
       System.out.println("Although you didn\'talk much, you had a long and fufilling day.\nYou get into bed excited for the next day");
+    }else{
+      System.out.println("As you lay in bed you think about the day you had.\nHopefully tomorrow will be as good.");
     }
 
     inScanner.close();
